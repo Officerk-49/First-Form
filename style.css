@@ -1,0 +1,229 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+:root {
+   --form-main-font: Calibri;
+   --form-bold-font: "Roboto-Bold";
+   --form-input-border: 1px solid rgb(224, 224, 224);
+   --form-border-radius: 5px;
+   --body-background-color: rgb(250, 250, 250);
+}
+
+@font-face {
+   font-family: "Norse-Bolde";
+   src: url(./fonts/Norse-Bold.woff2) format('woff2');
+}
+
+@font-face {
+   font-family: "Roboto-Bold";
+   src: url(./fonts/Roboto-Bold.woff2) format('woff2');
+}
+
+body, html {
+   height: 100%;
+   background-color: var(--body-background-color);
+}
+
+div.form.layout {
+   display: flex;
+   height: 100vh;
+   overflow: hidden;
+}
+
+div.form.left-side {
+   height: 100%;
+   width: 34%;
+   background-image: url(./img/branden-skeli-D9SM1xvemOw-unsplash.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   display: flex;     
+   flex-direction: column; 
+   justify-content: space-between;
+   align-items: center;
+}
+
+div.form.heading {
+   background-color: rgb(0 0 0 / 0.40);
+   width: 100%;
+   align-self: flex-start;
+   padding: 10px 0;
+   margin-top: 24vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+img#logo {
+   min-width: 5vw;
+   width: 10vmin;
+   min-height: 5vw;
+   height: 11vmin;
+}
+
+h1 {
+   font-family: "Norse-Bolde";
+   font-size: clamp(2rem, 5vw, 6rem);
+   color: #fff;
+}
+
+div#credit {
+   color: #fff;
+   font-size: clamp(0.5rem, 1vw, 1.5rem);
+   font-family: var(--form-main-font);
+   padding-bottom: 20px;
+}
+
+div#credit a {
+   color: #fff;
+}
+
+div.form.right-side {
+   flex: 1 1 auto;
+   min-width: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: calc(100vw - 34vw);
+}
+
+main {
+   background-color: #fff;
+   padding: 30px 30px;
+   border-top: 1px solid rgb(240, 240, 240);
+   box-shadow: 0 6px 8px -4px rgb(201, 200, 200);
+}
+
+main,
+div.form.header,
+div.form.footer {
+   padding-left: 30px;
+}
+
+div.form.header {
+   margin-bottom: 40px;
+}
+
+legend {
+   font-size: clamp(0.5rem, 1.5vw, 2rem);
+   font-family: var(--form-bold-font);
+   padding-bottom: 20px;
+}
+
+form {
+   font-family: var(--form-main-font);
+}
+
+label {
+   color: rgb(60, 58, 58);
+   font-size: clamp(0.5rem, 0.9vw, 1rem);
+   letter-spacing: 1px;
+}
+
+div.form.inputs {
+   display: flex;
+   gap: 70px;
+}
+
+form input {
+   background-color: rgb(254 254 254);
+   font-size: clamp(0.5rem, 0.94vw, 1.5rem);
+   width: 15vw;
+   height: 3.5vh;
+   border: var(--form-input-border);
+   border-radius: var(--form-border-radius);
+   outline: none;
+   padding: 5px;
+}
+
+form input:focus {
+   border: 1.5px solid rgb(0, 145, 255);
+   box-shadow: 1.5px 1.5px 10px 1px rgb(201, 200, 200);
+}
+
+form input:invalid {
+   border: 1px solid red;
+}
+
+div.form.inputs p {
+   display: flex;
+   flex-direction: column;
+}
+
+div.form.header p {
+   font-family: var(--form-bold-font);
+   font-size: clamp(0.8rem, 1.5vw, 2rem);
+   line-height: 2ch;
+}
+
+div.form.header p:nth-child(1) {
+   padding-bottom: 20px;
+   margin-top: 20px;
+   width: 50%;
+}
+
+div.form.first-row,
+div.form.second-row {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+div.form.footer {
+   margin-top: 20px;
+}
+
+button[type=submit] {
+   font-family: var(--form-bold-font);
+   font-size: clamp(0.8rem, 1.1vw, 2rem);
+   border: none;
+   color: #fff;
+   background-color: #ffb0c0;
+   border-radius: var(--form-border-radius);
+   padding: 0.5em 2em;
+   cursor: pointer;
+   box-shadow: 2px 6px 8px -3px rgb(196, 196, 196);
+}
+
+button[type=submit]:active {
+   transform: scale(0.98);
+}
+
+a#Log-in {
+   color: #ffb0c0;
+   text-decoration: none;
+}
+
+a#Log-in:hover {
+   text-decoration: underline;
+}
+
+p#last-p {
+   font-family: var(--form-main-font);
+   font-size: clamp(0.8rem, 1.1vw, 2rem);
+   padding-top: 20px;
+   padding-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+   div.form.left-side {
+      display: none;
+   }
+   div.form.inputs {
+      flex-direction: column;
+      gap: 20px;
+   }
+   form input {
+      border-radius: 2px;
+      width: 50vw;
+      height: 2.8vh;
+   }
+   div.form.header {
+      margin-bottom: 20px;
+   }
+   div.form.header p:nth-child(1) {
+      width: 80%;
+   }
+}
